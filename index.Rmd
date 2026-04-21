@@ -1,0 +1,39 @@
+---
+title: "Inspiration"
+author: Mai Nugen
+output: 
+  html_document:
+    self_contained: true
+---
+
+```{r setup, include=FALSE}
+# Make sure for your project you use the settings in the template,
+# NOT these
+# echo = FALSE hides code and will lose you marks in the project
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{css, echo = FALSE}
+body{
+  color: #white;
+  background-color: #black
+}
+```
+
+```{r, echo = FALSE}
+# Load your packages and write some code in here to produce your image
+library(magick)
+
+meme <- image_read("https://images.unsplash.com/photo-1513553404607-988bf2703777?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") %>%
+  image_annotate("Start your projects early!",
+                 color = 'white',
+                 boxcolor = 'blue',
+                 size = 50,
+                 gravity = "center") %>%
+  image_annotate("-A previous STATS220 student",
+                 color = 'blue',
+                 boxcolor = 'white',
+                 size = 30,
+                 gravity = 'south')
+meme
+```
